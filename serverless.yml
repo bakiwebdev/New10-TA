@@ -1,0 +1,62 @@
+service: nodejs-assignment
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  region: eu-west-1
+  environment:
+    APP_NAME: ${self:service}
+    AWS_ACCESS_KEY_ID: id_key
+    AWS_SECRET_ACCESS_KEY: access_key
+
+package:
+  exclude:
+    - .env
+    - coverage/**
+
+plugins:
+  - serverless-pseudo-parameters
+  - serverless-dynamodb-local
+  - serverless-offline
+
+functions:
+# get all loans
+  getLoans:
+    name: getLoans
+    handler: src/app1/functions.getLoans
+    events:
+      - http:
+          path: /get
+          method: get
+# get loan by id
+  getLoan:
+    name: getLoan
+    handler: src/app1/functions.getLoan
+    events:
+      - http:
+          path: /get/{id}
+          method: get
+# create new loan
+  createLoan:
+    name: createLoan
+    handler: src/app1/functions.createLoan
+    events:
+      - http:
+          path: /create/{amount}
+          method: get
+#delete loan
+  deleteLoan:
+    name: deleteLoan
+    handler: src/app1/functions.deleteLoan
+    events:
+      - http:
+          path: /delete/{id}
+          method: get
+
+  function4:
+    name: function4
+    handler: src/app1/functions.function4
+    events:
+      - http:
+          path: /disburse/{id}
+          method: get
