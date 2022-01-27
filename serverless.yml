@@ -44,6 +44,14 @@ functions:
       - http:
           path: /create/{amount}
           method: get
+# update loan
+  updateLoan:
+    name: updateLoan
+    handler: src/app1/functions.updateLoan
+    events:
+      - http:
+          path: /update/{id}
+          method: get
 #delete loan
   deleteLoan:
     name: deleteLoan
@@ -53,9 +61,9 @@ functions:
           path: /delete/{id}
           method: get
 
-  function4:
+  disburseLoan:
     name: function4
-    handler: src/app1/functions.function4
+    handler: src/app1/functions.disburseLoan
     events:
       - http:
           path: /disburse/{id}

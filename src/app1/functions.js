@@ -132,7 +132,7 @@ module.exports.deleteLoan = async event => {
                     statusCode: 500,
                     body: 'Internal Server Error : ' + err.message,
                 }
-            }            
+            }
             return {
                 statusCode: 200,
                 body: JSON.stringify(loan),
@@ -159,6 +159,28 @@ module.exports.deleteLoan = async event => {
         //         }
         //     })
         // })
+    } catch (e) {
+        return {
+            statusCode: 500,
+            body: e.stack,
+        }
+    }
+}
+
+// disburse a loan
+module.exports.disburseLoan = async event => {
+    try {
+        const { id } = event.pathParameters
+
+        return await new Promise((resolve, reject) => {
+            Loan.update({ id }, { status: DISBURSED }, function(err, loan) {
+                err && reject(err)
+                resolve({
+                    statusCode: 200,
+                    body: JSON.stringify(loan),
+                })
+            })
+        })
     } catch (e) {
         return {
             statusCode: 500,
