@@ -28,6 +28,8 @@
     "serverless-pseudo-parameters": "^1.4.2"
   },
   "dependencies": {
+    "axios": "^0.25.0",
+    "dotenv": "^14.3.2",
     "dynamodb": "^1.1.2",
     "joi": "^13.3.0"
   },

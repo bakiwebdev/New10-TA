@@ -441,6 +441,13 @@
   "resolved" "https://registry.npmjs.org/aws4/-/aws4-1.7.0.tgz"
   "version" "1.7.0"
 
+"axios@^0.25.0":
+  "integrity" "sha512-cD8FOb0tRH3uuEe6+evtAbgJtfxr7ly3fQjYcMcuPlgkwVS9xboaVIpcDV+cYQe+yGykgwZCs1pzjntcGa6l5g=="
+  "resolved" "https://registry.npmjs.org/axios/-/axios-0.25.0.tgz"
+  "version" "0.25.0"
+  dependencies:
+    "follow-redirects" "^1.14.7"
+
 "b64@3.x.x":
   "integrity" "sha512-Pbeh0i6OLubPJdIdCepn8ZQHwN2MWznZHbHABSTEfQ706ie+yuxNSaPdqX1xRatT6WanaS1EazMiSg0NUW2XxQ=="
   "resolved" "https://registry.npmjs.org/b64/-/b64-3.0.3.tgz"
@@ -1469,6 +1476,11 @@
   dependencies:
     "is-obj" "^1.0.0"
 
+"dotenv@^14.3.2":
+  "integrity" "sha512-vwEppIphpFdvaMCaHfCEv9IgwcxMljMw2TnAQBB4VWPvzXQLTb82jwmdOKzlEVUL3gNFT4l4TPKO+Bn+sqcrVQ=="
+  "resolved" "https://registry.npmjs.org/dotenv/-/dotenv-14.3.2.tgz"
+  "version" "14.3.2"
+
 "download@^5.0.2":
   "integrity" "sha1-Y1N/l3+ZJmow64oqL70fILgAD3o="
   "resolved" "https://registry.npmjs.org/download/-/download-5.0.3.tgz"
@@ -1982,6 +1994,11 @@
     "del" "^2.0.2"
     "graceful-fs" "^4.1.2"
     "write" "^0.2.1"
+
+"follow-redirects@^1.14.7":
+  "integrity" "sha512-+hbxoLbFMbRKDwohX8GkTataGqO6Jb7jGwpAlwgy2bIz25XtRm7KEzJM76R1WiNT5SwZkX4Y75SwBolkpmE7iQ=="
+  "resolved" "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.14.7.tgz"
+  "version" "1.14.7"
 
 "for-in@^1.0.1", "for-in@^1.0.2":
   "integrity" "sha1-gQaNKVqBQuwKxybG4iAMMPttXoA="

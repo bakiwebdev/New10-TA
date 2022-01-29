@@ -42,8 +42,9 @@ functions:
     handler: src/app1/functions.createLoan
     events:
       - http:
-          path: /create/{amount}
-          method: get
+          path: /create
+          method: post
+          
 # update loan
   updateLoan:
     name: updateLoan
@@ -51,20 +52,13 @@ functions:
     events:
       - http:
           path: /update/{id}
-          method: get
-#delete loan
-  deleteLoan:
-    name: deleteLoan
-    handler: src/app1/functions.deleteLoan
-    events:
-      - http:
-          path: /delete/{id}
-          method: get
+          method: put
 
+# disburse loan
   disburseLoan:
-    name: function4
-    handler: src/app1/functions.disburseLoan
+    name: disburseLoan
+    handler: src/app2/functions.disburseLoan
     events:
       - http:
           path: /disburse/{id}
-          method: get
+          method: put
