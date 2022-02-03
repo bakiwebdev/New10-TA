@@ -29,7 +29,7 @@ module.exports = async id => {
                     date_creation: res.data.datum_oprichting,
                     zipCode: res.data.postcode,
                     houseNumber: res.data.huisnummer,
-                    isActive: res.data.actief
+                    isActive: res.data.actief,
                 }
             })
             .catch(() => {
