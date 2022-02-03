@@ -1,6 +1,6 @@
 'use strict'
 
-const LoanDb = require('./../../Data/db')
+const LoanDb = require('./../../Data/Loan')
 const OFFERED = 'OFFERED'
 const { putRequest } = require('../../utils/httpRequest')
 // update a loan
@@ -24,13 +24,18 @@ module.exports = async event => {
                     amount,
                     companyID,
                 }
-                putRequest(`/disburse/${loanId}`, requestBody)
-                    .then(res => {
-                        return res
-                    })
-                    .catch(err => {
-                        return err.message
-                    })
+                return await new Promise((resolve, reject) => {
+                    putRequest(`/disburse/${loanId}`, requestBody)
+                        .then(response => {
+                            resolve({
+                                statusCode: 200,
+                                body: JSON.stringify(response),
+                            })
+                        })
+                        .catch(err => {
+                            reject(err)
+                        })
+                })
             } else {
                 return {
                     statusCode: 400,

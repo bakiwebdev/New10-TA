@@ -1,11 +1,11 @@
 'use strict'
 
-const LoanDb = require('./../../Data/db')
+const LoanDb = require('./../../Data/Loan')
 
 // get all loans
 module.exports = async () => {
     try {
-        let loans = await new Promise((resolve, reject) => {
+        const loans = await new Promise((resolve, reject) => {
             LoanDb.scan()
                 .loadAll()
                 .exec((err, loans) => {

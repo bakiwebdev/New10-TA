@@ -19,6 +19,10 @@ plugins:
   - serverless-dynamodb-local
   - serverless-offline
 
+custom:
+  serverless-offline:
+    noPrependStageInUrl: true
+
 functions:
 # get all loans
   getLoans:

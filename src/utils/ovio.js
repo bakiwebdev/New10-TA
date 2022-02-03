@@ -17,7 +17,7 @@ module.exports = async id => {
         if (!id) {
             return `id is null`
         }
-        let company = await companyInstance
+        const company = await companyInstance
             .get(`${id}`)
             .then(res => {
                 return {

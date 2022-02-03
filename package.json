@@ -22,16 +22,16 @@
     "jest": "22.4.3",
     "prettier": "^1.7.2",
     "prettier-eslint": "^8.2.0",
-    "serverless": "^1.27.3",
+    "serverless": "^1.83.3",
     "serverless-dynamodb-local": "^0.2.30",
-    "serverless-offline": "^3.23.1",
+    "serverless-offline": "^8.4.0",
     "serverless-pseudo-parameters": "^1.4.2"
   },
   "dependencies": {
     "axios": "^0.25.0",
     "dotenv": "^14.3.2",
     "dynamodb": "^1.1.2",
-    "joi": "^13.3.0"
+    "joi": "^13.3.0"    
   },
   "jest": {
     "roots": [

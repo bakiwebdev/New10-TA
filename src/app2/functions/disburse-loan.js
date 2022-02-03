@@ -1,28 +1,26 @@
 'use strict'
 
-const LoanDb = require('./../../Data/db')
+const LoanDb = require('./../../Data/Loan')
 const DISBURSED = 'DISBURSED'
 
 // disburse a loan
 module.exports = async event => {
     try {
         const loanId = event.pathParameters.id
+        const newData = {
+            id: loanId,
+            status: DISBURSED,
+            amount: 0,
+        }
         return await new Promise((resolve, reject) => {
-            LoanDb.update(
-                {
-                    id: loanId,
-                    amount: 0,
-                    status: DISBURSED,
-                },
-                function(err, loan) {
-                    err && reject(err)
+            LoanDb.update(newData, (err, loan) => {
+                err && reject(err)
 
-                    resolve({
-                        statusCode: 200,
-                        body: JSON.stringify(loan),
-                    })
-                }
-            )
+                resolve({
+                    statusCode: 200,
+                    body: JSON.stringify(loan),
+                })
+            })
         })
     } catch (e) {
         return {

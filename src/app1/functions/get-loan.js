@@ -1,12 +1,12 @@
 'use strict'
 
-const LoanDb = require('./../../Data/db')
+const LoanDb = require('./../../Data/Loan')
 
 // get a loan by id
 module.exports = async event => {
     try {
-        let id = event.pathParameters.id
-        let loan = await new Promise((resolve, reject) => {
+        const id = event.pathParameters.id
+        const loan = await new Promise((resolve, reject) => {
             LoanDb.get(id, (err, loan) => {
                 return err ? reject(err) : resolve(loan)
             })

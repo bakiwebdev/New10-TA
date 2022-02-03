@@ -1,7 +1,7 @@
 'use strict'
 
 const OVIO = require('./../../utils/ovio')
-const LoanDb = require('./../../Data/db')
+const LoanDb = require('./../../Data/Loan')
 
 const OFFERED = 'OFFERED'
 
@@ -33,7 +33,7 @@ module.exports = async data => {
         // check if the company is active
         if (company.isActive) {
             return await new Promise((resolve, reject) => {
-                LoanDb.create({ amount, status: OFFERED, company }, function(err, loan) {
+                LoanDb.create({ amount, status: OFFERED, company }, (err, loan) => {
                     err && reject(err)
 
                     resolve({
@@ -53,7 +53,7 @@ module.exports = async data => {
     } catch (e) {
         return {
             statusCode: 500,
-            body: 'Internal Server Error : ' + e.message,
+            body: 'Internal Server Error : ' + e,
         }
     }
 }
