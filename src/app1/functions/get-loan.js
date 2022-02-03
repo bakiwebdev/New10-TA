@@ -3,9 +3,8 @@
 const LoanDb = require('./../../Data/Loan')
 
 // get a loan by id
-module.exports = async event => {
+module.exports = async id => {
     try {
-        const id = event.pathParameters.id
         const loan = await new Promise((resolve, reject) => {
             LoanDb.get(id, (err, loan) => {
                 return err ? reject(err) : resolve(loan)

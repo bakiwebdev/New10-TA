@@ -4,9 +4,9 @@ const LoanDb = require('./../../Data/Loan')
 const DISBURSED = 'DISBURSED'
 
 // disburse a loan
-module.exports = async event => {
+module.exports = async id => {
     try {
-        const loanId = event.pathParameters.id
+        const loanId = id
         const newData = {
             id: loanId,
             status: DISBURSED,

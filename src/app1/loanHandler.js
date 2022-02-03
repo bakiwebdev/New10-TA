@@ -7,7 +7,7 @@ const update_loan = require('./functions/update-loan.js')
 
 // get loan by id
 module.exports.getLoan = async event => {
-    return await get_loan(event)
+    return await get_loan(event.pathParameters.id)
 }
 // get all loans
 module.exports.getLoans = async () => {
